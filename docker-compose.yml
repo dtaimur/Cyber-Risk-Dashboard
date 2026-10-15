@@ -1,0 +1,26 @@
+# Local container run:  docker compose up --build   ->  http://localhost:8000
+services:
+  dashboard:
+    build: .
+    image: cyber-risk-dashboard:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Plain HTTP on localhost; cloud deployments terminate HTTPS and keep this at 1
+      DASHBOARD_SECURE_COOKIES: "0"
+    volumes:
+      - dashboard-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+volumes:
+  dashboard-data:

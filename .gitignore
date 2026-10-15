@@ -1,0 +1,15 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local data and secrets — never commit
+backend/dashboard.db
+backend/.secret.key
+.env
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+.DS_Store

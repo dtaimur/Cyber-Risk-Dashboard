@@ -1,0 +1,13 @@
+**/node_modules
+**/.venv
+**/__pycache__
+**/.pytest_cache
+frontend/dist
+backend/tests
+backend/*.db
+backend/.secret.key
+backend/.demo-credentials
+.env
+.git
+.claude
+*.md
